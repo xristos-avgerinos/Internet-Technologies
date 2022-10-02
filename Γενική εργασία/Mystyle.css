@@ -1,0 +1,46 @@
+ table, td {border: 2px solid black;}
+ table {background-color:#660033; }
+ body {background-color:#a3536e;margin: 100px 150px 100px 80px; border: 5px solid #FFFFCC;font-size:25px;}
+ * {color: black; } /*Όλα τα στοιχεία*/
+ div > p {color:#330000	;} /* Άμεσος απόγονος */
+ li {font-size:25px; font-family:tahoma;  color:#000033;} /*Περιλαμβάνεται*/
+ h1 + p {color:	#171617;} /* Γειτονικά*/
+ .mycolor {color:#FF9999}
+ a:visited {color:#c9ccb1}
+ a:hover {color:	#FFCC66; font-style:italic}
+.container {
+  position: relative;
+  
+}
+.image {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:#FF3300;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

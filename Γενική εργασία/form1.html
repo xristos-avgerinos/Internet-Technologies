@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title> Φορμα επικοινωνίας </title> <meta charset="utf-8">
+<style>
+/*Χαρακτηριστικά σε πεδία input*/
+ input[type="text"] { /* και όποιος άλλος τύπος */ color:#000066;}
+ input[placeholder] {color:#330000;}
+ input[type="submit"] {color:#3300FF;}
+ input[type="reset"] {color:red;}
+ strong {color:red;}
+ form {background-color: #FFFFCC; margin:0 auto; width:60%;}
+</style>
+</head>
+<body>
+<form name="myForm"  onsubmit="return confirmForm()">
+<fieldset>
+<legend style="font-size:12pt; font-family:arial; color:black; background-color:#FF3333; width:103%; text-align:center">Φόρμα για επικοινωνία με τον Στέφανο Τσιτσιπά</legend>
+<br>
+Ονοματεπώνυμο<strong>*</strong> &nbsp; &nbsp; <input id="onoma" placeholder="admin" type="text" name="name" size="30" required><br><br>
+E-mail<strong>*</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input id="email" placeholder="xxxxxx@xxxx.zzz" type="email" name="email" size="30" required><br><br>
+Σχολια <strong>*</strong> <br> <textarea rows="6" cols="60" id="comments"  name="comments" required></textarea><br><br><br>
+<input type="Submit" id="submit" name="Submit" value="Αποστολή Στοιχείων"/> <input type="Reset" name="Reset" value="Καθαρισμός Φόρμας"/>
+<br><br>
+Τα πεδία με <strong>*</strong> είναι υποχρεωτικά.
+<br><br>
+<button style="font-size:18px;  background-color:Maroon; color:white;"  onclick="goBack()">Πίσω</button>
+</fieldset> 
+</form>
+<script>
+function goBack() 
+{
+  window.history.back();
+}
+ function confirmForm() 
+ {
+  user_name= document.getElementById('onoma').value;
+  emaill= document.getElementById('email').value;
+  com= document.getElementById('comments').value;
+  document.write("<body style='width:55%; height:50%; padding:10px; margin:auto; border:3px solid black;font-size:14pt;'>");
+  document.write("<p style='font-size:17pt; font-family:arial; color:white; background-color:navy; text-align:center;'>Είστε σίγουροι οτι θέλετε να αποστείλετε το παρακάτω email στην ηλεκτρονική διέυθυνση του Στέφανου Τσιτσιπά; </p>");
+  document.write("&nbsp; &nbsp;<strong>Ονοματεπώνυμο:</strong> &nbsp; &nbsp;"+user_name+" ");
+  document.write("<br><br>&nbsp; &nbsp; <strong>E-mail:</strong>&nbsp; &nbsp;"+emaill+" ");
+  document.write("<br><br>&nbsp; &nbsp;<strong>Σχόλια:</strong> &nbsp; &nbsp; "+com+" ");
+  document.write("<br><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href='mailto:tsitsipas@gmail.com?&&subject=Αυτόματη%20φόρμα%20επικοινωνίας&body=Ονοματεπώνυμο:"+user_name+" %0D%0A"+com+"' target='_top'>ΑΠΟΣΤΟΛΗ</a>");
+  document.write("&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href='form1.html'>ΑΚΥΡΩΣΗ </a>");
+ }
+ function valelements(element)
+{
+temp=/[0-9]/g;
+ if (temp.test(element)) 
+      {alert("Παρακαλώ στο ονοματεπώνυμο μην εισάγετε αριθμους!!!");	 
+	  return false;}
+ else 
+      {
+       return true;
+      }
+}
+document.getElementById("submit").onclick=function () {valelements(document.getElementById("onoma").value);}
+</script>
+</body>
+</html>
